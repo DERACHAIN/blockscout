@@ -84,13 +84,18 @@ services:
       file: ./services/stats.yml
       service: stats
 
-  user-ops-indexer:
-    depends_on:
-      - db
-      - backend
+  # user-ops-indexer:
+  #   depends_on:
+  #     - db
+  #     - backend
+  #   extends:
+  #     file: ./services/user-ops-indexer.yml
+  #     service: user-ops-indexer
+
+  sc-verifier:
     extends:
-      file: ./services/user-ops-indexer.yml
-      service: user-ops-indexer
+      file: ./services/smart-contract-verifier.yml
+      service: smart-contract-verifier
 
   proxy:
     depends_on:
